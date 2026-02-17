@@ -1,28 +1,9 @@
-# Use OpenJDK 17 JDK slim image (specific version)
-FROM openjdk:17-jdk-slim-bullseye
+# Use a prebuilt AdoptOpenJDK 17 image from GHCR
+FROM ghcr.io/adoptium/temurin17:17.0.8_7-jdk
 
-
-# Set working directory
 WORKDIR /app
-
-# Copy all files to the container
 COPY . /app
 
-# Compile Java server
 RUN javac Server.java
 
-# Run the server
-CMD ["java", "Server"]
-
-
-# Set working directory
-WORKDIR /app
-
-# Copy all files to the container
-COPY . /app
-
-# Compile the Java server
-RUN javac Server.java
-
-# Run the server
 CMD ["java", "Server"]
