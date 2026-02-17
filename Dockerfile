@@ -1,5 +1,6 @@
 # Use OpenJDK 17 JDK slim image (specific version)
-FROM openjdk:17.0.8-jdk-slim
+FROM openjdk:17-jdk-slim-bullseye
+
 
 # Set working directory
 WORKDIR /app
